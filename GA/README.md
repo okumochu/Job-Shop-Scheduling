@@ -1,18 +1,19 @@
-## Process
-1. Check max_iteration_time
-2. Generate Initial Population. Otherwise, last interaction’s 
-3. selected poulation
-4. Evaluate Fitness Score
-5. Tournament Selection
-6. Crossover & Mutation
-    - Iterate all parent. Follow the probability to crossover a random parent
-    - So does the mutation, and add their offspring to the population.
-7. Sort the population(parent and offsprings) by “makespan”, and called survivors
-8. Truncate the worst performance’s survivors until we left the request ammount of survivors
-9. Get the best performance’s survivors and record it
-Take the rest of the survivors to the next iteration
+# Genetic Algorithm for Job Shop Scheduling
 
+Open [GA_implementation.ipynb](GA_implementation.ipynb) after following the setup instructions in the [JSP overview](https://github.com/okumochu/Flexible-Job-Shop-Scheduling/blob/main/job-shop/README.md). Run it with this directory as the kernel working directory so that its `../Dataset/` paths resolve correctly.
 
+## Implementation outline
 
-#### How to compute makespan
-![alt text](image.png)
+1. Set the population size, iteration limit, and variation parameters.
+2. Generate the initial population.
+3. Evaluate each chromosome's makespan.
+4. Select parents using the implemented tournament procedure.
+5. Apply crossover and mutation.
+6. Rank parent and offspring solutions and retain the configured survivors.
+7. Record objective values and repeat until the iteration limit.
+
+This outline describes the historical code. It does not establish the correctness or performance of the search strategy.
+
+## Original makespan illustration
+
+![Illustration of makespan computation](image.png)
